@@ -1,0 +1,43 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$primary: #00ccff;
+$secondary: #6c757d;
+$success: #10713D;
+$info: $secondary;
+$warning: #8C5C03;
+$danger: #9E2821;
+$light: #f8f9fa;
+$link-color: $primary;
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+#copyright{
+  text-align: center;
+}
+
+#home{
+  text-align: center;
+}
+
+
+.img-small{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.home-background {
+  /* The image used */
+  background-image: url(./Media/index_homepage.jpg);
+
+  /* Full height */
+  height: 750px; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
