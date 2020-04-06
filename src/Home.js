@@ -13,9 +13,9 @@ export default function Home() {
       <>
       <div className='home-background' style={{textAlign:"center"}}>
 
-      <h1 style={{color:"white", paddingTop: "13%", fontSize:"4rem"}}><b>We Are Here To Help You</b> <i>Help Others</i></h1>
+      <h1 style={{color:"white", paddingTop: "15%", fontSize:"4.5rem"}}><b>We're Here To Help You</b>  <i>Help Others</i></h1>
 
-      <h1 style={{color:"white", paddingTop: "10%", fontSize:"3rem"}}>Here's How</h1>
+      <h1 style={{color:"white", paddingTop: "13%", fontSize:"3rem"}}>Here's How</h1>
       <i style={{color:"white", fontSize:"3rem"}} class="fa fa-chevron-circle-down"></i>
 
       </div>
