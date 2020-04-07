@@ -1,7 +1,7 @@
 import React from "react"
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import { Link } from "react-router-dom";
-import Favicon from "./Media/mountain-logo-png-2.png"
+import Favicon from "./Media/gsLogo.png"
 import AppContext from './context'
 
 export default function Top(props){
@@ -11,12 +11,12 @@ export default function Top(props){
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
             <Link to="/">
-                <Navbar.Brand><img alt="mountain logo" style={{ width: "100px"}}src={Favicon} id="logo"></img><h1 style={{ fontSize: "2rem" }}>Gane & Sarson Consulting</h1></Navbar.Brand>
+                <Navbar.Brand><img alt="mountain logo" style={{ width: "60px", marginLeft:"20px"}}src={Favicon} id="logo"></img></Navbar.Brand>
             </Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+               <Link to="" style={{ fontSize: "1.5rem", color: "white", textDecoration: "none", marginLeft:"10px" }}>Gane Sarson Consulting</Link>
+            </Nav>
 
-        </Navbar.Collapse>
         </Navbar>
     )
 }

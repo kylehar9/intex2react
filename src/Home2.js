@@ -17,10 +17,10 @@ export default function Home() {
             </Row>
             <Row>
                 <Col md="6">
-                    <Button style={{height:"60px", fontSize:"1.5rem"}}>Creators of existing or new campaigns</Button>
+                    <Link to="creators" className="btn btn-large btn-primary" style={{height:"60px", fontSize:"1.5rem"}}>Creators of existing or new campaigns</Link>
                 </Col>
                 <Col md="6">
-                    <Button style={{height:"60px", fontSize:"1.5rem"}}>Management and analysts at GoFundMe</Button>
+                    <Link to="analysts" className="btn btn-large btn-primary" style={{height:"60px", fontSize:"1.5rem"}}>Management and analysts at GoFundMe</Link>
                 </Col>
             </Row>
 

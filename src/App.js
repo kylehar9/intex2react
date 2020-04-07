@@ -6,16 +6,12 @@ import {
   Route
 } from "react-router-dom";
 import Top from './Top.js'
-import Left from "./Left"
 import Home from "./Home"
 import Bottom from "./Bottom"
-import Right from "./Right"
 import About from "./About"
 import Help from "./Help"
-import ProductDetail from "./Product_Detail"
-import Cart from './Cart'
-import Checkout from './Checkout'
-import Reciept from './Reciept'
+import Creators from "./Creators"
+import Analysts from "./Analysts"
 import Home2 from './Home2'
 
 export default function App(props) {
@@ -29,25 +25,18 @@ export default function App(props) {
         </Row>
         <Row nogutters="true" className="flex-grow-1">
           <Col md="12" > 
-
             <Switch>
-            <Route path="/prod">
-                <ProductDetail />
+            <Route path="/creators">
+                <Creators />
+              </Route>
+              <Route path="/analysts">
+                <Analysts />
               </Route>
               <Route path="/about">
                 <About />
               </Route>
               <Route path="/help">
                 <Help />
-              </Route>
-              <Route path="/cart">
-                <Cart />
-              </Route>
-              <Route path="/checkout">
-                <Checkout />
-              </Route>
-              <Route path="/reciept">
-                <Reciept />
               </Route>
               <Route path="/">
                 <Home />
