@@ -46,7 +46,7 @@ export default function App(props) {
           </Col>
         </Row>
         <Row nogutters="true" className="flex-grow-0 flex-shrink-0">
-          <Col nogutters="true" className="px-3 py-2" style={{ backgroundColor: "grey", color: "white" }}>
+          <Col nogutters="true" className="px-3 py-1" style={{ backgroundColor: "grey", color: "white" }}>
             <Bottom />
              </Col>
         </Row>

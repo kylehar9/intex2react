@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import AppContext from './context'
 import App from './App'
 import produce from 'immer'
@@ -84,26 +83,26 @@ export default class AppProvider extends React.Component {
     }
 
     
-    async componentDidMount() {
-        const resp = await axios.get('/api/category/')
-        const prods = await axios.get('/api/products/')
+//     async componentDidMount() {
+//         const resp = await axios.get('/api/category/')
+//         const prods = await axios.get('/api/products/')
         
         
-        const cats = {}
-        for (const c of resp.data) {
-            cats[c.id] = c
-        }
+//         const cats = {}
+//         for (const c of resp.data) {
+//             cats[c.id] = c
+//         }
 
-        const prodWID = {}
-        for (const p of prods.data) {
-            prodWID[p.id] = p
-        }
+//         const prodWID = {}
+//         for (const p of prods.data) {
+//             prodWID[p.id] = p
+//         }
 
 
-        this.setState({
-            categories: cats,
-            products: prodWID
-        })
-    }
+//         this.setState({
+//             categories: cats,
+//             products: prodWID
+//         })
+//     }
 
-}
+ }

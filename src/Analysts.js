@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Col, Row, Button } from "react-bootstrap"
-import { Link } from 'react-router-dom'
+import { Container, Col, Row} from "react-bootstrap"
 
 export default function Analysts() {
 

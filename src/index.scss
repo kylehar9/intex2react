@@ -41,3 +41,16 @@ $link-color: $primary;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.creator-background {
+  /* The image used */
+  background-image: url(./Media/doctorInAfrica.jpg);
+
+  /* Full height */
+  height: 780px; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
