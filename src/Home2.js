@@ -1,26 +1,25 @@
 import React from "react";
-import { Container, Col, Row } from "react-bootstrap"
-import { Link } from 'react-router-dom'
+import { Container, Col, Row, Button } from "react-bootstrap"
 
 export default function Home() {
 
     return (
       <>
-        <h1 style={{marginLeft:"20%", marginTop:"50px"}}>What this site offers you</h1>
-        <p style={{marginLeft:"25%", marginTop:"20px", marginRight:"25%"}}>Est veniam proident cillum elit tempor velit excepteur sint ullamco adipisicing adipisicing proident. Dolor adipisicing quis officia adipisicing id irure officia Lorem irure qui reprehenderit magna. Lorem culpa eu labore do dolore mollit deserunt. Fugiat cupidatat deserunt eiusmod minim tempor adipisicing cupidatat. Ex occaecat sit cillum veniam amet ex et mollit exercitation est cillum enim. Labore amet tempor deserunt ut pariatur amet deserunt sit nulla eu ullamco anim incididunt. Labore elit ex ullamco officia dolore et proident.</p>
 
-        <Container style={{marginTop:"50px", marginLeft:"18%", marginRight:"25%", marginBottom:"100px"}}>
-            <Row>
+        <Container style={{marginTop:"50px", marginBottom:"100px", textAlign:"center", alignContent:"center"}}>
+        <h1 style={{marginTop:"50px"}}>What this site offers you</h1>
+
+        <p style={{marginTop:"20px"}}>As you know, GoFundMe has been receiving even more traffic than usual as people scramble to crowdfund for various causes, many of which are related to the recent COVID-19 pandemic. As such, GoFundMe is in serious need of a web application to help manage the flood of new users and campaigns. We have developed a clean, dual-purpose web application that has two main features: projecting the success of hypothetical new campaigns created by GoFundMe end users, and allowing GoFundMe managers and employees to easily search through existing campaigns and find which ones are most successful.
+</p>
+            <Row style={{textAlign:"center", alignContent:"center"}}>
                 <Col md="12">
                     <h1>Which one are you?</h1><br/>
                 </Col>
             </Row>
             <Row>
-                <Col md="6">
-                    <Link to="creators" className="btn btn-large btn-primary" style={{height:"60px", fontSize:"1.5rem"}}>Creators of existing or new campaigns</Link>
-                </Col>
-                <Col md="6">
-                    <Link to="analysts" className="btn btn-large btn-primary" style={{height:"60px", fontSize:"1.5rem"}}>Management and analysts at GoFundMe</Link>
+                <Col md="12">
+                    <Button href="creators" className="btn btn-large btn-primary" style={{height:"60px", fontSize:"1.5rem"}}>Campaign Creator</Button><br/><br />
+                    <Button href="analysts" className="btn btn-large btn-warning" style={{height:"60px", fontSize:"1.5rem"}}>GoFundMe Management</Button>
                 </Col>
             </Row>
 

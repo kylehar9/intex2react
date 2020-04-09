@@ -25,15 +25,15 @@ const CreatorsController = props => {
 
         <Formik
         initialValues={{
-            title: 'PLZ WORK',
-            description: "I'LL GIVE YOU ANYTHING",
+            title: '',
+            description: "",
             category_id: '',
-            goal: '2000',
-            currencycode: 'USD',
-            days_active: '30',
-            has_beneficiary: 'TRUE',
-            visible_in_search: 'TRUE',
-            is_charity: 'TRUE',
+            goal: '',
+            currencycode: '',
+            days_active: '',
+            has_beneficiary: '',
+            visible_in_search: '',
+            is_charity: '',
         }}
             validateOnChange={false}
             validateOnBlur={false}
@@ -42,6 +42,9 @@ const CreatorsController = props => {
                 if (!values.title) {
                     errors.title = "Please enter a title"
                 }
+                // if (values.title) {
+                //     errors.title = "Please enter a title"
+                // }
                 if (!values.description) {
                     errors.description = "Please enter an description"
                 }
@@ -71,11 +74,10 @@ const CreatorsController = props => {
             onSubmit={async (values) => {
 
                 //console.log(JSON.stringify(values))
-                const response = await axios.post('http://18.222.137.188:8000/api/results', JSON.stringify(values))
-                //const response = await axios.post('http://localhost:8000/api/results', JSON.stringify(values))
+                //const response = await axios.post('http://18.222.137.188:8000/api/results', JSON.stringify(values))
+                const response = await axios.post('http://localhost:8000/api/results', JSON.stringify(values))
                 //console.log(response.data.result[0][13])
 
-                console.log('before', responseState)
                 setResponseState(response.data.result[0][13])
 
                 
@@ -200,10 +202,17 @@ const InputDropDownCur = (props) => (
                 disabled={props.disabled}
                 {...rProps.field}
             >
-                <option>Choose...</option>
+                <option value="" disabled>Choose...</option>
                 <option>USD</option>
+                <option>AUD</option>
+                <option>CAD</option>
+                <option>CHF</option>
+                <option>DKK</option>
                 <option>EUR</option>
-                <option>YEN</option>
+                <option>GBP</option>
+                <option>NOK</option>
+                <option>SEK</option>
+
             </bs.Form.Control>
             {rProps.meta.touched && rProps.meta.error &&
                 <div className="text-danger">{rProps.meta.error}</div>
@@ -224,7 +233,7 @@ const InputDropDownCat = (props) => (
                 disabled={props.disabled}
                 {...rProps.field}
             >
-                <option>Choose...</option>
+                <option value="" disabled>Choose...</option>
                 <option value="2">Accidents & Emergencies</option>
                 <option value="3">Animals & Pets</option>
                 <option value="4">Babies Kids & Family</option>
@@ -264,7 +273,7 @@ const InputCheckBox = (props) => (
                 disabled={props.disabled}
                 {...rProps.field}
             >
-                <option>Choose...</option>
+                <option value="" disabled>Choose...</option>
                 <option value="TRUE">Yes</option>
                 <option value="FALSE">No</option>
             </bs.Form.Control>
