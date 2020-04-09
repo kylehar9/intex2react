@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 import Top from './Top.js'
 import Home from "./Home"
-import Bottom from "./Bottom"
 import About from "./About"
 import Help from "./Help"
 import Creators from "./Creators"
 import Analysts from "./Analysts"
 import Home2 from './Home2'
+import CampaignDetail from './CampaignDetail'
 
 export default function App(props) {
   return (
@@ -32,6 +32,9 @@ export default function App(props) {
               <Route path="/analysts">
                 <Analysts />
               </Route>
+              <Route path="/campaign">
+                <CampaignDetail />
+              </Route>
               <Route path="/about">
                 <About />
               </Route>
@@ -44,11 +47,6 @@ export default function App(props) {
               </Route>
             </Switch>
           </Col>
-        </Row>
-        <Row nogutters="true" className="flex-grow-0 flex-shrink-0">
-          <Col nogutters="true" className="px-3 py-1" style={{ backgroundColor: "grey", color: "white" }}>
-            <Bottom />
-             </Col>
         </Row>
       </Container>
     </Router>

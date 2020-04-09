@@ -40,39 +40,13 @@ export default class AppProvider extends React.Component {
 
     }
 
-    removeFromCart = pid => {
-        this.setState(state => produce(state, draft => {
-            
-            delete draft.cart[pid]
-  
-        }))
-    }
 
-    getCartTotal() {
-
-            const itemsInCart = this.cart
-            let productsInCart = []
-            for (const c of Object.entries(itemsInCart))
-            {
-                productsInCart.push(this.products[c[0]])
-            }
+    async componentDidMount() {
+        //const resp = await axios.post('http://localhost:8000/api/campaign', match.params.id).then((response))
         
-            let totalPrice = 0
-            for(const item of productsInCart)
-            {
-                totalPrice += parseFloat(item.price);
-            }
 
-            return(totalPrice)
     }
 
-    clearCart = pid => {
-        this.setState(state => produce(state, draft => {
-            
-            draft.cart = {}
-  
-        }))
-    }
 
     render() {
         return (
@@ -83,26 +57,5 @@ export default class AppProvider extends React.Component {
     }
 
     
-//     async componentDidMount() {
-//         const resp = await axios.get('/api/category/')
-//         const prods = await axios.get('/api/products/')
-        
-        
-//         const cats = {}
-//         for (const c of resp.data) {
-//             cats[c.id] = c
-//         }
-
-//         const prodWID = {}
-//         for (const p of prods.data) {
-//             prodWID[p.id] = p
-//         }
-
-
-//         this.setState({
-//             categories: cats,
-//             products: prodWID
-//         })
-//     }
 
  }

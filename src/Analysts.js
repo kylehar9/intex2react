@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as bs from 'react-bootstrap'
 import { Formik, Form, Field } from 'formik'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 function Analysts(props) {
@@ -26,12 +27,19 @@ const AnalystsController = props => {
 
         <Formik
             initialValues={{
-                campaign_id: "",
                 goal: "",
+                description: "",
                 goal_max: "",
                 goal_min: "",
+                donators_max: "",
+                donators_min: "",
                 title: "",
-                // goal: "",
+                score: "",
+                donators: "",
+                current_amount_max: "",
+                current_amount_min: "",
+                current_amount: "",
+                currencycode: ""
             }}
             validateOnChange={false}
             validateOnBlur={false}
@@ -83,18 +91,18 @@ const AnalystsForm = props => {
             <Form>
                 <br></br><h1 style={{ color: "white", textAlign: "center" }}>Find A Campaign</h1><br />
 
-                <bs.Card style={{ width: "60%", marginLeft: "20%", marginRight: "20" }}>
+                <bs.Card style={{ width: "80%", marginLeft: "10%", marginRight: "1x0" }}>
                     <bs.Card.Header>
                         <h3>Search</h3>
                     </bs.Card.Header>
                     <div style={{ padding: "15px" }}>
                         <bs.Row>
                             <bs.Col md="3">
-                                {/* <InputDropDownSearchOrFilter disabled={props.form.isSubmitting} title="Search or Filter:" name="category_id" type="dropdown" /> */}
-                                <bs.Form.Label>Search Or Filter</bs.Form.Label>
-                                <bs.Form.Control as="select" id="searchOrFilter" type="dropdown" disabled={props.disabled}>
+                                {/* <InputDropDownSearchOrSort disabled={props.form.isSubmitting} title="Search or Sort:" name="category_id" type="dropdown" /> */}
+                                <bs.Form.Label>Search Or Sort</bs.Form.Label>
+                                <bs.Form.Control as="select" id="searchOrSort" type="dropdown" disabled={props.disabled}>
                                     <option value="true">Search</option>
-                                    <option value="false">Filter</option>
+                                    <option value="false">Sort</option>
                                 </bs.Form.Control>
                             </bs.Col>
                             <bs.Col md="3">
@@ -112,15 +120,44 @@ const AnalystsForm = props => {
                                 </bs.Form.Control>
                             </bs.Col>
                             <bs.Col md="6">
-                                  <Input disabled={props.form.isSubmitting} title="Search For:" name="title" type="text" />
+                                <Input disabled={props.form.isSubmitting} title="Search For:" name="title" type="text" />
                             </bs.Col>
                         </bs.Row>
 
                         <bs.Button disabled={props.form.isSubmitting} type="submit">Submit {props.form.isSubmitting && <bs.Spinner size="sm" animation="border"></bs.Spinner>}</bs.Button>
                         <br /><br />
-                        {console.log(props.response)}
 
-                         {/* <p>{props.response}</p> */}
+                        <bs.Table striped bordered hover>
+                            <thead>
+                                <tr>
+                                    <th>Campaign ID</th>
+                                    <th>Title</th>
+                                    <th>Goal</th>
+                                    <th># of Donators</th>
+                                    <th>Current Amount</th>
+                                    <th>Currency</th>
+                                    <th># of Days Active</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {Object.values(props.response).map((p, key) => {
+
+                                    return (
+                                        <tr key={"campaign-" + key}>
+                                            <td>{p.campaign_id}</td>
+                                            <td>{p.title}</td>
+                                            <td>${p.goal}</td>
+                                            <td>{p.donators}</td>
+                                            <td>{p.current_amount}</td>
+                                            <td>{p.currencycode}</td>
+                                            <td>{p.days_active}</td>
+                                            <td><Link to={`/campaign/${p.campaign_id}`} className="btn btn-primary btn-large">Details</Link></td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </bs.Table>
                     </div>
                 </bs.Card>
                 <br />
