@@ -71,10 +71,14 @@ const CreatorsController = props => {
             onSubmit={async (values) => {
 
                 //console.log(JSON.stringify(values))
-                const response = await axios.post('http://ec2-13-58-78-104.us-east-2.compute.amazonaws.com:8000/api/results', JSON.stringify(values))
+                const response = await axios.post('http://18.222.137.188:8000/api/results', JSON.stringify(values))
                 //const response = await axios.post('http://localhost:8000/api/results', JSON.stringify(values))
                 //console.log(response.data.result[0][13])
+
+                console.log('before', responseState)
                 setResponseState(response.data.result[0][13])
+
+                
 
             }}
 
