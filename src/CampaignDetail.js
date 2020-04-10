@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Col, Row, ProgressBar, Button, Card } from "react-bootstrap"
 import {
-    useRouteMatch
+    useRouteMatch, Link
 } from "react-router-dom";
 import axios from 'axios'
 
@@ -81,7 +81,7 @@ export default function Campaign_Detail() {
                             <h5>Is Charity: {isCharity}</h5>
                             <h5>State: {state}</h5>
                             <br />
-                            <Button type="button" href="/analysts">Back To Search</Button>
+                            <Link to="/analysts" className="btn btn-large btn-primary">Back To Search</Link>
                         </Card.Body>
                     </Card>
                 </Col>
